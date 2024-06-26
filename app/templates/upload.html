@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png">
+    <!-- Site title -->
+    <title>图像篡改监测系统</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fontawesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/aos.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slide.css') }}">
+    <!-- Styles External End -->
+</head>
+
+<body class="bp-bg-body animation-active">
+    <!-- start journey -->
+    <!-- Scroll Bottom To Top -->
+    <button class="scrollToTopBtn showBtn"><i class="fa-solid fa-hand-point-up"></i></button>
+    <!-- Header Area Start -->
+    <header class="header header--transparent sticky-on" data-aos="fade-down" data-aos-duration="1500">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-2 col-lg-2 col-md-6 col-6">
+                    <div class="header__logo">
+                        <a class="header__logo__link" href="/">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-7 col-md-6 col-6">
+                    <div class="header__navigation">
+                        <div class="header__menu text-center">
+                            <div class="main-menu">
+                            </div>
+                            <div class="hamburger-icon text-end">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 d-none d-lg-block">
+                    <div class="header__button text-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay mobile-overlay--sidebar">
+        <div class="mobile-overlay__box">
+            <div class="mobile-overlay__header">
+                <div class="mobile-overlay__logo">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="">
+
+                </div>
+                <div class="mobile-overlay__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <div class="mobile-overlay__main-menu">
+                <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+            </div>
+        </div>
+    </div>
+    <div class="mobile-overlay--backdrop"></div>
+
+    <!-- main wrapper -->
+    <main id="bp-main">
+        <!-- Main Banner Area -->
+        <section id="banner"
+            class="banner banner--gradient pt-155 pb-30 overflow-x-hidden bp-slide-wrap content-section">
+            <div class="banner__bg scroll-effect-parallax" data-bg-image="{{ url_for('static', filename='images/bg/banner-bg.png') }}"></div>
+            <div class="banner__bg--gradient scroll-effect-parallax"
+                data-bg-image="{{ url_for('static', filename='images/shapes/banner-gradient-shape.svg') }}"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="banner-content__title text-white cursor-scale">上传需要检测的图片</h2>
+                            <div class="banner-content text-center">
+                                <form action="/upload_image" method="POST">
+                                    <input type="file">
+                                    <p>拖拽文件或者点击这个区域.</p>
+                                    <button id="upload-button" type="submit">上传</button>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="banner-gallery banner-gallery--slider swiper">
+                <div class="swiper-wrapper d-flex align-items-end">
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/18.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/1.jpg') }}" alt="gallery">
+                            </div>
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/2.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/3.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/4.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/5.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/6.jpg') }}" alt="gallery">
+                            </div>
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/7.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/8.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/9.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/10.jpg') }}" alt="gallery">
+                            </div>
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/11.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/12.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/13.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/14.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/15.jpg') }}" alt="gallery">
+                            </div>
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/16.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="banner-gallery__col">
+                            <div class="banner-gallery__item">
+                                <img src="{{ url_for('static', filename='images/index/17.jpg') }}" alt="gallery">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </section>
+
+      
+    </main>
+    <script src="{{ url_for('static', filename='js/magnific-popup.min.js') }}"></script>
+    <!-- Javascript External -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/gsap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ScrollTrigger.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/aos.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <!-- Javascript External -->
+
+    <!-- Javascript External End -->
+</body>
+
+</html>
